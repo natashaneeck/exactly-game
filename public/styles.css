@@ -6,7 +6,7 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background: linear-gradient(180deg, #dba6f4 -50%, #dba6f4 69.71%, #dba6f4 150%);
+  background: linear-gradient(180deg, #efddf8 -50%, #dba6f4 69.71%, #9835c6 150%);
   font-family: 'Source Sans Pro', sans-serif;
   display: flex;
   align-items: center;
@@ -22,6 +22,15 @@ html, body {
   image-rendering: pixelated;
 }
 
+.customizer {
+  position: absolute;
+  top: 0;
+  left:0;
+  padding: 1em;
+  display: flex;
+  gap: 0.5em;
+  align-items: flex-end
+}
 
 label {
   display: block;
@@ -46,8 +55,37 @@ input[type="text"] {
   text-transform: uppercase;
 }
 input[type="text"]:focus {
-  border-color: #ffff45;
+  border-color: #ffdd45;
 }
+
+/*
+.Name-container {
+  position: absolute;
+  top: -12px;
+  left: -5px;
+  font-size: 5px;
+  padding: 1px 2px 1px;
+  border-radius: 3px;
+  background: #333;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
+} */
+
+/*
+button {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  background: #59ff5a;
+  border: 0;
+  border-bottom: 2px solid #1e830b;
+  cursor: pointer;
+}
+button:active {
+  position: relative;
+  top: 1px;
+} */
 
 /* reminder: can use animations for 
 in progress conversation icons, and then switch icon to done after */

@@ -81,7 +81,7 @@ let chatRef;
 function Customizer({ playerName, setPlayerName, roomKey, setRoomKey }) {
     function handleNameEnter(e) {
         if (e.key === 'Enter' && playerName.trim()) {
-            console.log('Name entered:', value);
+            console.log('Name entered:', playerName);
             playerRef.update({ name: playerName });
         }
     }
@@ -89,8 +89,8 @@ function Customizer({ playerName, setPlayerName, roomKey, setRoomKey }) {
     function handleRoomKeyEnter(e) {
         if (e.key === 'Enter' && roomKey.trim()) {
 
-            console.log('Room ID entered:', value);
-            playerRef = firebase.database().ref(`rooms/${value}/players/${playerId}`);
+            console.log('RoomKey changed:', roomKey);
+            playerRef = firebase.database().ref(`rooms/${roomKey}/players/${playerId}`);
             //..should probably only set up below thing after in not lobby anyways. lobby should not have chats
             chatRef = firebase.database().ref(`rooms/${roomKey}/chats/${playerId}`);
             //can't set chatRef until game started and pairs set up

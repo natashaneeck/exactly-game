@@ -1,5 +1,7 @@
-<html>
+<!doctype html>
+<html lang="en-US">
   <head>
+    <meta charset="utf-8" />
     <title>Exactly Party Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -10,12 +12,7 @@
 
     <div class="game-container">
     </div>
-    <div class="customizer">
-      <div>
-        <label for="player-name">Your Name</label>
-        <input id="player-name" maxlength="10" type="text" />
-      </div>
-    </div>
+    <div id="root"></div>
     <div class="player-statuses">
       <label for="player-name">Player</label>
       <label img></label>
@@ -42,6 +39,9 @@
         const app = initializeApp(firebaseConfig);
     </script>
 
-    <script src="app.js"></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel" src="app.js"></script>
   </body>
 </html>

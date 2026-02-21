@@ -17,8 +17,9 @@ html, body {
 #root {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 1em;
 }
 
 .game-container { 
@@ -36,11 +37,13 @@ html, body {
   left:0;
   padding: 1em;
   display: flex;
+  flex-direction: column;
   gap: 0.5em;
   align-items: flex-end
 }
 
 label {
+  font-size: 14px;
   display: block;
   font-weight: bold;
 }

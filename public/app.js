@@ -90,9 +90,9 @@ function Customizer({ playerName, setPlayerName, roomKey, setRoomKey }) {
         if (e.key === 'Enter' && roomKey.trim()) {
 
             console.log('Room ID entered:', value);
-            playerRef = firebase.database.ref(`rooms/${value}/players/${playerId}`);
+            playerRef = firebase.database().ref(`rooms/${value}/players/${playerId}`);
             //..should probably only set up below thing after in not lobby anyways. lobby should not have chats
-            chatRef = firebase.database.ref(`rooms/${roomKey}/chats/${playerId}`);
+            chatRef = firebase.database().ref(`rooms/${roomKey}/chats/${playerId}`);
             //can't set chatRef until game started and pairs set up
         }
     }
@@ -130,7 +130,7 @@ function PlayerList({ roomKey }) {
 
     React.useEffect(() => {
         if (!roomKey) return;
-        const ref = firebase.database.ref(`rooms/${roomKey}/players`);
+        const ref = firebase.database().ref(`rooms/${roomKey}/players`);
         ref.on('value', (snapshot) => {
             const data = snapshot.val();
             setPlayers(data ? Object.values(data) : []);
@@ -147,7 +147,7 @@ function PlayerList({ roomKey }) {
 
 
 function Game() {
-    const [playerName, setPlayerName] = React.useState('INSERT NAME HERE');
+    const [playerName, setPlayerName] = React.useState('');
     const [roomKey, setRoomKey] = React.useState('');
 
     React.useEffect(() => {
@@ -158,7 +158,7 @@ function Game() {
         firebase.auth().onAuthStateChanged((user) => {
             if (user) {
                 playerId = user.uid;
-                playerRef = firebase.database.ref(`rooms/lobby/players/${playerId}`);
+                playerRef = firebase.database().ref(`rooms/lobby/players/${playerId}`);
                 playerRef.set({
                     id: playerId,
                     name: playerName,
